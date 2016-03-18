@@ -9,7 +9,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.EditText;
 
-import com.genius.passwordview_library.R;
+import com.genius.utils.ResourceUtil;
 
 
 /**
@@ -61,8 +61,9 @@ public class Password_EditText extends EditText {
         if (mClearDrawable == null) {
 //            mClearDrawable = getResources().getDrawable(R.mipmap.password_edittext_normal);
 //            mClearDrawable = ContextCompat.getDrawable(getContext(), R.mipmap.password_edittext_normal).mutate();
-            eye = ContextCompat.getDrawable(getContext(), R.mipmap.password_edittext_normal).mutate();
-            eye_close = ContextCompat.getDrawable(getContext(), R.mipmap.password_edittext_press).mutate();
+            eye = ContextCompat.getDrawable(getContext(), ResourceUtil.getMipmapId(getContext(), "password_edittext_normal")).mutate();
+//            eye_close = ContextCompat.getDrawable(getContext(), R.mipmap.password_edittext_press).mutate();
+            eye_close = ContextCompat.getDrawable(getContext(), ResourceUtil.getMipmapId(getContext(),"password_edittext_press")).mutate();
         }
 //        mClearDrawable.setBounds(0, 0, mClearDrawable.getIntrinsicWidth(), mClearDrawable.getIntrinsicHeight());
         setPasswordIcon(isHidden);
